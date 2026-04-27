@@ -19,6 +19,7 @@ todoInput.addEventListener("keypress", function(event) {
       event.target.value = ''
     }
   });
+addTaskButton.addEventListener('click', addTask)
 
   clearCompletedTasks.addEventListener('click', function(event) {
     tasks = tasks.filter(task => !task.done)
