@@ -61,12 +61,26 @@ function initializeDOM(){
     headerDate = document.getElementById('header-date')
     currentDay = document.getElementById('current-day')
     todoInput = document.querySelector('[data-todo-input] input')
+    addTaskButton = document.getElementById('add-task-btn')
     todosList = document.querySelector('[data-todos-list]')
     tasksRemaining = document.querySelector('[data-tasks-remaining]')
     clearCompletedTasks = document.querySelector('[data-clear-completed-tasks]')
     noTasks = document.querySelector('[data-no-tasks-today]')
 }
+function addTask() {
+    if (todoInput.value.trim() !== '') {
+        let taskObject = {
+            id: Date.now().toString(),
+            name: todoInput.value.trim(),
+            done: false
+        }
 
+        tasks.push(taskObject)
+        save()
+        renderTasks()
+        todoInput.value = ''
+    }
+}
 
 function dateArrays(){
     monthsArray = [
