@@ -60,7 +60,7 @@ function setHeaderDate(){
 function initializeDOM(){
     headerDate = document.getElementById('header-date')
     currentDay = document.getElementById('current-day')
-    todoInput = document.querySelector('[data-todo-input]')
+    todoInput = document.querySelector('[data-todo-input] input')
     todosList = document.querySelector('[data-todos-list]')
     tasksRemaining = document.querySelector('[data-tasks-remaining]')
     clearCompletedTasks = document.querySelector('[data-clear-completed-tasks]')
