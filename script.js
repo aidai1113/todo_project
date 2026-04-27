@@ -117,4 +117,19 @@ function renderTasksRemaining(){
 function save(){
     localStorage.setItem('tasks', JSON.stringify(tasks))
 }
+function addMobileTask() {
+   let input = document.querySelector('[data-todo-input] input');
 
+   if(input.value.trim() !== ''){
+      let taskObject = {
+         id: Date.now().toString(),
+         name: input.value,
+         done: false
+      };
+
+      tasks.push(taskObject);
+      save();
+      renderTasks();
+      input.value = '';
+   }
+}
